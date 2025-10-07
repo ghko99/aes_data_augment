@@ -16,6 +16,26 @@
 * 해당 방식을 다음 그림과 같이 AI-HUB 에세이 글 평가 데이터에 적용해본뒤 KoBERT-GRU 기반 AES 모델에 학습시켜봤음.
 ICCMST 논문에 따르면 Topic을 10문장마다 삽입하는 것이 좋은 성능을 보였다고함. 하지만 ASAP데이터셋과 달리 에세이 글 평가 데이터는 비교적 적은 문장으로 이루어진 에세이 데이터셋이기 때문에 10문장이 아닌 1문장마다 Topic을 삽입함.
 
+## 필요 라이브러리 (Dependencies)
+
+본 프로젝트를 실행하기 위해 필요한 파이썬 라이브러리는 다음과 같습니다.
+
+```
+torch
+pandas
+tensorflow
+transformers
+tqdm
+scikit-learn
+sentencepiece
+```
+
+`requirements.txt` 파일을 생성하여 관리하거나, 아래 명령어를 통해 한 번에 설치할 수 있습니다.
+
+```bash
+pip install torch pandas tensorflow transformers tqdm scikit-learn sentencepiece
+```
+
 ## 성능 측정 방법
 * 코드 구성-> aes_embedding.py에서 에세이의 임베딩 벡터 추출후, csv파일에 저장. aes_train.py에서 csv파일 read후 gru 모델에 학습
 ![image](https://github.com/ghko99/aes_data_augment/assets/115913818/24768dc0-4c6a-4d31-988e-6c24dc40dfc5)
